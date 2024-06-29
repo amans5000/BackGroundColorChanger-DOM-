@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .color {
+            border: 2px solid black;
+            width: 100px;
+            height: 100px;
+        }
+
+        #white {
+            background: white;
+        }
+
+        #red {
+            background: red;
+        }
+
+        #yellow {
+            background: yellow;
+        }
+
+        #blue {
+            background: blue;
+        }
+
+        #green {
+            background: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button class="color" id="white"></button>
+        <button class="color" id="red"></button>
+        <button class="color" id="yellow"></button>
+        <button class="color" id="green"></button>
+        <button class="color" id="blue"></button>
+    </div>
+    <h1>Click on the above colors to change the background color</h1>
+</body>
+
+<script>
+    const body = document.querySelector("body");
+    const color = document.querySelectorAll(".color");
+    color.forEach(function (button) {
+        button.addEventListener("click", function (e) {
+            body.style.background = e.target.id;
+            // console.log(e);
+            // console.log(e.target);
+        })
+    })
+
+</script>
+
+</html>
